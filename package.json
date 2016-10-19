@@ -1,0 +1,35 @@
+{
+    "name":                 "departure",
+    "version":              "9.9.9",
+    "description":
+
+      "Deep equal assertion with difference reporting.",
+
+    "keywords":
+    [
+                            "assert", "diff", "equal", "tdd"
+    ],
+    "author":               "Alan Gutierrez <alan@prettyrobots.com>",
+    "homepage":             "https://bigeasy.github.io/departure",
+    "bugs":                 "https://github.com/bigeasy/departure/issues",
+    "license":              "MIT",
+    "repository":
+    {
+                            "type": "git",
+                            "url": "http://github.com/bigeasy/departure.git"
+    },
+    "dependencies":
+    {
+                            "deep-diff":                    "0.3.4",
+                            "deep-equal":                   "1.0.1"
+    },
+    "devDependencies":
+    {
+                            "proof":                        "1.2.x"
+    },
+    "main":                 "departure",
+    "scripts":
+    {
+                            "test": "proof platform win32 && proof test */*/*.t.* || t/test"
+    }
+}
