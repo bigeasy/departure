@@ -3,11 +3,11 @@ var diff = require('deep-diff')
 var util = require('util')
 
 exports.compare = function (actual, expected) {
-    if (!deepEqual(replayed.shifted, shifted)) {
+    if (!deepEqual(actual, expected)) {
         var message = []
-        message.push('EXPECTED ' + util.inspect(replayed.shifted, null, Infinity))
-        message.push('GOT ' + util.inspect(replayed.shifted, null, Infinity))
-        message.push('DIFF ' + diff(replayed.shifted, shifted))
+        message.push('ACTUAL ' + util.inspect(actual, null, Infinity))
+        message.push('EXPECTED ' + util.inspect(expected, null, Infinity))
+        message.push('DIFF ' + util.inspect(diff(actual, expected)))
         return message.join('\n')
     }
     return null
