@@ -3,7 +3,7 @@ var diff = require('deep-diff')
 var util = require('util')
 
 exports.compare = function (actual, expected) {
-    if (!deepEqual(actual, expected)) {
+    if (!deepEqual(actual, expected, { strict: true })) {
         var message = []
         message.push('ACTUAL ' + util.inspect(actual, null, Infinity))
         message.push('EXPECTED ' + util.inspect(expected, null, Infinity))
