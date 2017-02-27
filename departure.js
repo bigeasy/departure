@@ -7,7 +7,7 @@ exports.compare = function (actual, expected) {
         var message = []
         message.push('ACTUAL ' + util.inspect(actual, null, Infinity))
         message.push('EXPECTED ' + util.inspect(expected, null, Infinity))
-        message.push('DIFF ' + util.inspect(diff(actual, expected)))
+        message.push('DIFF ' + util.inspect(JSON.parse(JSON.stringify(diff(actual, expected)))))
         return message.join('\n')
     }
     return null
