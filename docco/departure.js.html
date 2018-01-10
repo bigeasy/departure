@@ -39,7 +39,7 @@ exports.compare = <span class="hljs-function"><span class="hljs-keyword">functio
         <span class="hljs-keyword">var</span> message = []
         message.push(<span class="hljs-string">'ACTUAL '</span> + util.inspect(actual, <span class="hljs-literal">null</span>, <span class="hljs-literal">Infinity</span>))
         message.push(<span class="hljs-string">'EXPECTED '</span> + util.inspect(expected, <span class="hljs-literal">null</span>, <span class="hljs-literal">Infinity</span>))
-        message.push(<span class="hljs-string">'DIFF '</span> + util.inspect(diff(actual, expected)))
+        message.push(<span class="hljs-string">'DIFF '</span> + util.inspect(<span class="hljs-built_in">JSON</span>.parse(<span class="hljs-built_in">JSON</span>.stringify(diff(actual, expected)))))
         <span class="hljs-keyword">return</span> message.join(<span class="hljs-string">'\n'</span>)
     }
     <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
@@ -50,7 +50,9 @@ exports.raise = <span class="hljs-function"><span class="hljs-keyword">function<
     <span class="hljs-keyword">if</span> (message) {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Assertion failure.\n\n'</span> + message)
     }
-}</pre></div></div>
+}
+
+</pre></div></div>
 
         </li>
 
