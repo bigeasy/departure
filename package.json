@@ -20,7 +20,7 @@
     },
     "dependencies":
     {
-                            "deep-diff":                    "0.3.8",
+                            "deep-diff":                    "1.0.x",
                             "deep-equal":                   "1.0.1"
     },
     "devDependencies":
