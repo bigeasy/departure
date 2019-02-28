@@ -25,11 +25,11 @@
     },
     "devDependencies":
     {
-                            "proof":                        "5.0.x"
+                            "proof":                        "7.0.x"
     },
     "main":                 "departure",
     "scripts":
     {
-                            "test": "proof platform win32 && proof test */*/*.t.* || t/test"
+                            "test": "proof test test/*.t.js"
     }
 }
