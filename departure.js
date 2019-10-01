@@ -1,10 +1,10 @@
-var deepEqual = require('deep-equal')
-var diff = require('deep-diff')
-var util = require('util')
+const deepEqual = require('deep-equal')
+const diff = require('deep-diff')
+const util = require('util')
 
 exports.compare = function (actual, expected) {
     if (!deepEqual(actual, expected, { strict: true })) {
-        var message = []
+        const message = []
         message.push('ACTUAL ' + util.inspect(actual, null, Infinity))
         message.push('EXPECTED ' + util.inspect(expected, null, Infinity))
         message.push('DIFF ' + util.inspect(JSON.parse(JSON.stringify(diff(actual, expected)))))
@@ -14,7 +14,7 @@ exports.compare = function (actual, expected) {
 }
 
 exports.raise = function (actual, expected) {
-    var message = exports.compare(actual, expected)
+    const message = exports.compare(actual, expected)
     if (message) {
         throw new Error('Assertion failure.\n\n' + message)
     }
