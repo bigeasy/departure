@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/bigeasy/departure/workflows/Node%20CI/badge.svg)](https://github.com/bigeasy/ascension/actions)
+[![Actions Status](https://github.com/bigeasy/departure/workflows/Node%20CI/badge.svg)](https://github.com/bigeasy/departure/actions)
 [![codecov](https://codecov.io/gh/bigeasy/departure/branch/master/graph/badge.svg)](https://codecov.io/gh/bigeasy/departure)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
