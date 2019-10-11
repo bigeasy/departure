@@ -1,7 +1,6 @@
+/.dots
 /.wiseguy
-/docs
-/node_modules
-/.proof.out
-/coverage
 /.nyc_output
-/npm-debug.log
+/docs
+/coverage
+/node_modules
