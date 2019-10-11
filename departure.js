@@ -1,9 +1,11 @@
 const diff = require('deep-diff')
 const assert = require('assert')
 const util = require('util')
-const OBJECT = {}
 
 const equal = exports.equal = function (left, right) {
+    if (left === right) {
+        return true
+    }
     if (Array.isArray(left)) {
         if (!Array.isArray(right) || left.length != right.length) {
             return false
@@ -14,7 +16,8 @@ const equal = exports.equal = function (left, right) {
             }
         }
         return true
-    } else if (typeof left === 'object') {
+    }
+    if (typeof left === 'object') {
         if (typeof right !== 'object') {
             return false
         }
@@ -25,10 +28,8 @@ const equal = exports.equal = function (left, right) {
             }
             return true
         }
-    } else {
-        assert(!isNaN(left) && !isNaN(right) && left !== undefined && right !== undefined)
-        return left === right
     }
+    return left !== left && right !== right
 }
 
 exports.compare = function (actual, expected) {
