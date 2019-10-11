@@ -1,4 +1,4 @@
-require('proof')(10, prove)
+require('proof')(12, prove)
 
 function prove (okay) {
     const { compare, raise, equal } = require('..')
@@ -7,6 +7,8 @@ function prove (okay) {
     okay(!equal([ 1 ], [ 2 ]), 'arrays not equal')
     okay(equal([ 1 ], [ 1 ]), 'arrays equal')
     okay(!equal({}, 1), 'object is not a number')
+    okay(!equal(null, (() => {})()), 'null does not equal undefined')
+    okay(!equal(1, '1'), 'no coercion to string')
     const foo = {}
     okay(!equal({ a: 1 }, { a: 2 }), 'objects not equal')
     okay(equal({ a: 1 }, { a: 1 }), 'objects equal')
