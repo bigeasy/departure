@@ -2,7 +2,10 @@ const diff = require('deep-diff')
 const assert = require('assert')
 const util = require('util')
 
-const equal = exports.equal = function (left, right) {
+const equal = exports.equal = require('fast-deep-equal')
+
+/*
+function f (left, right) {
     if (left === right) {
         return true
     }
@@ -31,6 +34,7 @@ const equal = exports.equal = function (left, right) {
     }
     return left !== left && right !== right
 }
+*/
 
 exports.compare = function (actual, expected) {
     if (!equal(actual, expected, { strict: true })) {
