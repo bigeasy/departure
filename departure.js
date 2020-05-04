@@ -41,7 +41,8 @@ exports.compare = function (actual, expected) {
         const message = []
         message.push('ACTUAL ' + util.inspect(actual, null, Infinity))
         message.push('EXPECTED ' + util.inspect(expected, null, Infinity))
-        message.push('DIFF ' + util.inspect(JSON.parse(JSON.stringify(diff(actual, expected)))))
+        message.push('DIFF ' +
+        util.inspect(JSON.parse(JSON.stringify(diff(actual, expected))), { depth: Infinity }))
         return message.join('\n')
     }
     return null
