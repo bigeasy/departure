@@ -1,6 +1,6 @@
 {
     "name":                 "departure",
-    "version":              "2.0.0-alpha.5",
+    "version":              "2.0.0",
     "description":
 
       "Deep equal assertion with difference reporting.",
