@@ -18,6 +18,7 @@ Deep equal assertion with difference reporting.
 Departure installs from NPM.
 
 ```
+//{ "mode": "text" }
 npm install departure
 ```
 
@@ -28,7 +29,15 @@ deal with the fact that JavaScript truthiness will treat `''` and `0` as true so
 the `||` operator can't always be used to create given or default one-liner.
 
 ```javascript
-const { compare, raise, equal } = require('departure')
+//{ "mode": "code" }
+(function () {
+    //{ "include": "overview" }
+}) ()
+```
+
+```javascript
+//{ "name": "overview", "code": { "require": "'..'" }, "text": { "require": "'departure'" } }
+const { compare, raise, equal } = require(%(require)s)
 ```
 
 We use the name "extant" on NPM because we want the first extant argument.
@@ -41,18 +50,26 @@ Proof `okay` function to assert out statements in the readme. A Proof unit test
 generally looks like this.
 
 ```javascript
-require('proof')(4, async okay => {
-    okay('always okay')
-    okay(true, 'okay if true')
-    okay(1, 1, 'okay if equal')
-    okay({ value: 1 }, { value: 1 }, 'okay if deep strict equal')
+//{ "code": { "tests": 1 }, "text": { "tests": 4  } }
+require('proof')(%(tests)d, async okay => {
+    //{ "include": "test", "mode": "code" }
+    //{ "include": "proof" }
 })
+```
+
+```javascript
+//{ "name": "proof", "mode": "text" }
+okay('always okay')
+okay(true, 'okay if true')
+okay(1, 1, 'okay if equal')
+okay({ value: 1 }, { value: 1 }, 'okay if deep strict equal')
 ```
 
 You can run this unit test yourself to see the output from the various
 code sections of the readme.
 
 ```text
+//{ "mode": "text" }
 git clone git@github.com:bigeasy/departure.git
 cd departure
 npm install --no-package-lock --no-save
@@ -64,7 +81,8 @@ node test/readme.t.js
 The `'extant'` module exports a single `coalesce` function.
 
 ```javascript
-const { compare, raise, equal } = require('depature')
+//{ "name": "test", "code": { "require": "'..'" }, "text": { "require": "'depature'" } }
+const { compare, raise, equal } = require(%(require)s)
 ```
 
 Note that Extant is SQL's `COALESCE`. It returns the first non-null-like value,
@@ -72,5 +90,6 @@ that is the first value that is not `== null`, which would be `null` or
 `undefined`. If there is no such argument it returns `null`.
 
 ```javascript
+//{ "name": "test" }
 okay('test')
 ```
